@@ -54,12 +54,48 @@ MM FirstFile.txt  (staged and modified)
 A  rose.txt  (untracked file is staged)
 ?? jasmine.txt (untracked)
 
-Ignoring files :
+##### Ignoring files :
 Add patterns to .gitignore file your root directory.
 
 
 $ cat .gitignore
 *.[ox]   [Don't track files ending with .o or .x ]
+
+git log --oneline
+
+git log --pretty=format:"%h %ad - %s [%an]"
+08467cf Wed Jan 13 13:33:59 2016 +0530 - third aero change [=]
+
+%ad - author date
+%an - author name
+%h hash
+%s subject
+%d ref names
+
+.git/info/exclude    - use this for local ignore
+
+git blame <file name>
+
+
+git reset HEAD^  (unstage the recent commit and move it to parent of the current head)
+ 
+git reset --hard HEAD^     (HEAD^ means parent of the current head)
+
+git checkout -- fileName  <last comitted version)
+
+git commit --amend -a -m "adding product"  (amend previous commit)
+
+##### Rebasing
+
+When you have a master branch and an admin branch, to rebase
+go to admin branch and  git rebase master
+Then go to master and do  git merge admin
+
+##### Interactive Rebase
+git rebase -i HEAD~3
+
+
+
 
 
 
